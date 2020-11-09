@@ -20,4 +20,12 @@ CREATE TABLE employees(
 	
 SELECT * FROM employees;
 
+--Create table for salaries, use emp_no as PK
+CREATE TABLE salaries(
+	emp_no INT PRIMARY KEY NOT NULL,
+	salary INT);
+	
+SELECT * FROM salaries;
+
+
 

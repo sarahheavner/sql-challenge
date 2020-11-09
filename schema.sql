@@ -27,5 +27,31 @@ CREATE TABLE salaries(
 	
 SELECT * FROM salaries;
 
+--Create table for departments, use dept_no as PK
+CREATE TABLE departments(
+	dept_no VARCHAR(5) PRIMARY KEY NOT NULL,
+	dept_name VARCHAR (25)
+);
 
+SELECT * FROM departments;
+
+--Create table for dept_manager
+CREATE TABLE dept_manager(
+	dept_no VARCHAR(5) NOT NULL,
+	emp_no INT NOT NULL,
+	FOREIGN KEY (dept_no) REFERENCES departments(dept_no),
+	FOREIGN KEY (emp_no) REFERENCES employees(emp_no)
+);
+
+SELECT * FROM dept_manager;
+
+--Create table for dept_emp
+CREATE TABLE dept_emp(
+	emp_no INT NOT NULL,
+	dept_no VARCHAR(5) NOT NULL,
+	FOREIGN KEY (emp_no) REFERENCES employees(emp_no),
+	FOREIGN KEY (dept_no) REFERENCES departments(dept_no)
+);
+
+SELECT * FROM dept_emp;
 

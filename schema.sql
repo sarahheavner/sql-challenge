@@ -35,7 +35,7 @@ CREATE TABLE departments(
 
 SELECT * FROM departments;
 
---Create table for dept_manager
+--Create junction table for dept_manager referencing departments and employees tables
 CREATE TABLE dept_manager(
 	dept_no VARCHAR(5) NOT NULL,
 	emp_no INT NOT NULL,
@@ -46,7 +46,7 @@ CREATE TABLE dept_manager(
 
 SELECT * FROM dept_manager;
 
---Create table for dept_emp
+--Create junction table for dept_emp referencing employees and departments tables
 CREATE TABLE dept_emp(
 	emp_no INT NOT NULL,
 	dept_no VARCHAR(5) NOT NULL,

@@ -7,7 +7,7 @@ SELECT * FROM salaries;
 SELECT * FROM titles;
 
 --List the following details of each employee: employee number, last name, first name, sex, and salary.
-SELECT e.emp_no, e.first_name, e.last_name, e.sex, s.salary
+SELECT e.emp_no,e.last_name, e.first_name, e.sex, s.salary
 FROM employees e
 LEFT JOIN salaries s
 ON e.emp_no = s.emp_no;
@@ -30,7 +30,7 @@ ON m.emp_no = e.emp_no;
 
 --List the department of each employee with the following information: 
 --employee number, last name, first name, and department name.
-SELECT d.dept_no, d.dept_name, de.emp_no, e.last_name, e.first_name
+SELECT de.emp_no, e.last_name, e.first_name, d.dept_name
 FROM departments d
 LEFT JOIN dept_emp de
 ON d.dept_no = de.dept_no

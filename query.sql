@@ -70,3 +70,13 @@ SELECT last_name, COUNT(last_name) AS name_count
 FROM employees
 GROUP BY last_name
 ORDER BY name_count DESC;
+
+--On your way out of the office, you hear the words, "Search your ID number." 
+--You look down at your badge to see that your employee ID number is 499942.
+SELECT e.emp_no, e.emp_title_id, t.title, s.salary
+FROM employees e
+LEFT JOIN titles t
+ON e.emp_title_id = t.title_id
+LEFT JOIN salaries s
+ON e.emp_no = s.emp_no
+WHERE e.emp_no = 499942;

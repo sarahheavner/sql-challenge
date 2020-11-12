@@ -1,10 +1,11 @@
 --Create table for titles, set title_id as Primary Key
 CREATE TABLE titles(
 	title_id VARCHAR(10) PRIMARY KEY NOT NULL,
-	title VARCHAR (25)
+	title VARCHAR (25) NOT NULL
 );
 
 SELECT * FROM titles;
+
 
 --Create table for employees, set emp_no as PK and emp_title_id as Foreign Key
 CREATE TABLE employees(
@@ -12,25 +13,26 @@ CREATE TABLE employees(
 	emp_title_id VARCHAR(10) NOT NULL,
 	FOREIGN KEY (emp_title_id) REFERENCES titles(title_id),
 	birth_date DATE,
-	first_name VARCHAR,
-	last_name VARCHAR,
-	SEX VARCHAR,
-	hire_date DATE
+	first_name VARCHAR NOT NULL,
+	last_name VARCHAR NOT NULL,
+	SEX VARCHAR NOT NULL,
+	hire_date DATE NOT NULL
 );
-	
+
 SELECT * FROM employees;
 
 --Create table for salaries, use emp_no as PK
 CREATE TABLE salaries(
 	emp_no INT PRIMARY KEY NOT NULL,
-	salary INT);
+	salary INT NOT NULL
+);
 	
 SELECT * FROM salaries;
 
 --Create table for departments, use dept_no as PK
 CREATE TABLE departments(
 	dept_no VARCHAR(5) PRIMARY KEY NOT NULL,
-	dept_name VARCHAR (25)
+	dept_name VARCHAR (25) NOT NULL
 );
 
 SELECT * FROM departments;
@@ -56,5 +58,6 @@ CREATE TABLE dept_emp(
 );
 
 SELECT * FROM dept_emp;
+
 
 
